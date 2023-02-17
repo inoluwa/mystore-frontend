@@ -10,11 +10,11 @@ storageSpace = window.localStorage;
  
   constructor() { }
 
-  addProductToCart(product: CartProduct[]): void{
+  addProduct(product: CartProduct[]): void{
     this.storageSpace.setItem('cart', JSON.stringify(product));
   }
 
-  getCartProduct(): CartProduct[] | []{
+  getProduct(): CartProduct[] | []{
     const cartProduct = this.storageSpace.getItem('cart')
     return cartProduct? JSON.parse(cartProduct): [];
   }
