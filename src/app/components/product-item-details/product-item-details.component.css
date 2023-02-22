@@ -4,8 +4,8 @@ img {
   }
   
   .select-input {
-    width: 108px; 
-    margin-bottom: 8px;
+    width: 66px;            
+    height: 29px;  
   }
   
   .detail-container {
@@ -19,7 +19,13 @@ img {
     margin-left: 128px;
     margin-right: 128px;
   }
-  
+  .product-detail{
+    display: flex;
+    flex-direction: column;
+  }
   .back-link {
     margin-top: 8px;
   }
+  
+
+  

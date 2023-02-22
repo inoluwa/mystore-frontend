@@ -1,1 +1,64 @@
-<p>cart works!</p>
+
+<div class="cart">
+
+<div class="">
+<div *ngIf="products.length; else noCart" class="cart-container">
+    <div class="cart-item-details">
+        <div *ngFor="let product of products" class="cart-item">
+            <div>
+                <a routerLink="/cart">
+                    <img class="" src='{{product.url}}'>
+                </a>
+            </div>
+            
+            <div class="cart-panel">
+                <div class="product-item-detail">{{ product.name}}</div>
+                <div class="product-item-detail">$ {{ product.price}}</div>
+                <div class="product-item-detail">
+                    <div class="product-item-detail">
+                        <label for="">Amount:</label>
+                         <input type="number"  name="cart" id="cart" [(ngModel)]="product.orderCount" (ngModelChange)="checkValue($event, product)" >
+                    </div>
+                         
+                </div>
+                
+            </div>
+        </div>
+        <div class="cart-item"><b>Total Price: {{totalPrice | currency    }}</b></div>
+    </div>
+   
+</div>
+<ng-template #noCart>
+    <div class="empty-cart-message">
+    Cart is Empty! Please, <a routerLink="/"> add product to cart</a>. 
+    </div>
+</ng-template>
+</div>
+<div class="cust-info">
+
+    <form (ngSubmit)="onSubmit()" #form="ngForm">
+        <div class="mb-4">
+            <div class="mb-2">
+                Full Name
+            </div> 
+            <input type="text" placeholder="minimum 3 letters" class="form-input" required [(ngModel)]="info.fullname" name="fullname" minlength="3">
+        </div>
+        <div class="mb-4">
+            <div class="mb-2">
+Address           </div> 
+            <input type="text" placeholder="minimum 6 letters" class="form-input" required [(ngModel)]="info.address" name="address" minlength="6">
+        </div>
+        <div class="mb-4">
+            <div class="mb-2">
+                Card number
+            </div> 
+            <input type="number" placeholder="16 digits" class="form-input" required [(ngModel)]="info.cardnumber" name="cardnumber" pattern="^[0-9]{16}$">
+        </div>
+        
+        <div class="center">
+
+            <button type="submit" class="btn " [disabled]="form.invalid">Submit</button>
+        </div>
+    </form>
+</div>
+</div>

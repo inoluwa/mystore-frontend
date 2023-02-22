@@ -10,3 +10,10 @@
     display: flex;
     justify-content: center;
   }
+  .list-items{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 12px;
+  }

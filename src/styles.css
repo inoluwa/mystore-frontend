@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+.btn{
+    border: none;
+    color: #ffffff;
+    background: blue;
+    border-radius: 14px;
+    padding: 5px 15px;
+    font-size: 15px;
+    margin: 9px 0;
+}
+.btn:disabled{
+    background: rgba(0, 0, 255, 0.308);
+}
+input, select{
+    min-height: 25px;
+    /* margin-left:12px ; */
+    width: 50px;
+}
+.center{
+    text-align: center;
+}

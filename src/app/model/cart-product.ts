@@ -4,4 +4,11 @@ export interface CartProduct {
     price: number;
     url: string;
     description: string;
+    orderCount:number;
+  }
+  export interface CustomerInformation{
+    fullname?: string;
+    address?: string;
+    cardnumber?: string;
+    
   }

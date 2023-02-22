@@ -1,1 +1,21 @@
-<p>product-item-details works!</p>
+
+<div class="detail-container">
+    <div id="product-details-view">
+        <img [src]="product.url">
+    </div>
+    <div class="detail-item">
+        <h2> {{ product.name }}</h2>
+        <p class="price">{{ product.price}}</p>
+        <p class="product-description">{{ product.description }}</p>
+            <form class="product-detail"  #f="ngForm"  >
+            <select class="select-input" name="cart" id="cart" required  #cart="ngModel" ngModel>
+            <option [ngValue]="i" selected="i==1" *ngFor="let i of items">{{i}}</option>
+           </select>
+        <button class="btn" type="button" (click)="addToCart( f)" [disabled]="f.invalid">add to cart</button>
+    </form>
+    <div>
+        <a class="back-link" routerLink="/">&lt; back to product list</a>
+    </div>
+
+    </div>
+</div>

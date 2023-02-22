@@ -32,14 +32,25 @@ img {
     justify-content: center;
     margin-top: 64px;
   }
-  
+  .cust-info{
+    margin-top: 64px;
+  }
+  .form-input{
+   min-width:200px ;
+  }
   .cart-panel {
     margin-left: 50px;
     margin-right: 50px;
   }
-  
+  .mb-4{
+    margin-bottom: 1rem;
+  }
   .empty-cart-message {
     display: flex;
     justify-content: center;
     margin-top: 64px;
+  }
+  .cart{
+    display: flex;
+    justify-content: space-evenly;
   }

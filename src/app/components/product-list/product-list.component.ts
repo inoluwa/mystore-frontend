@@ -10,10 +10,13 @@ import { CartProductService } from 'src/app/services/cart-product.service';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
-productList:Product[]=[]
-productCount:string[]=["1","2","3","4","5","6"]
+  productItem: Product[]=[];
 
-constructor(private productService:ProductService, private cartProductSeervice:CartProductService){}
+  constructor(private productService:ProductService ){}
 
-ngOnInit(){}
+  ngOnInit(): void {
+    this.productService.getProduct().subscribe(res => {
+      this.productItem = res;
+    })
+  }
 }

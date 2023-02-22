@@ -8,6 +8,8 @@ import { ConfirmationComponent } from './components/confirmation/confirmation.co
 import { ProductItemDetailsComponent } from './components/product-item-details/product-item-details.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
+import { ProductItemComponent } from './components/product-item/product-item.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,10 +21,12 @@ import { ProductListComponent } from './components/product-list/product-list.com
     ProductItemDetailsComponent,
     ProductListComponent,
     HeaderComponent,
+    ProductItemComponent
     
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     HttpClientModule,
     
