@@ -1,7 +1,7 @@
 # MyStore
 This is a fullstack project using angular and dummy data(json).
 I used localstorage to store data.
-(./docs/product_item.png)
+!['products'](./docs/product_item.png)
 
 ## Getting Started
 Run `npm install` to install all the packages to your pc
