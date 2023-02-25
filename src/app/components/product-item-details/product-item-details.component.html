@@ -8,13 +8,13 @@
         <p class="price">{{ product.price}}</p>
         <p class="product-description">{{ product.description }}</p>
             <form class="product-detail"  #f="ngForm"  >
-            <select class="select-input" name="cart" id="cart" required  #cart="ngModel" ngModel>
-            <option [ngValue]="i" selected="i==1" *ngFor="let i of items">{{i}}</option>
+            <select class="select-input" name="cart" id="cart" required    [(ngModel)]="cart"   >
+            <option [ngValue]="i" *ngFor="let i of items">{{i}}</option>
            </select>
-        <button class="btn" type="button" (click)="addToCart( f)" [disabled]="f.invalid">add to cart</button>
+        <button class="btn" type="button" (click)="addToCart( )" [disabled]="f.invalid">Add to cart</button>
     </form>
     <div>
-        <a class="back-link" routerLink="/">&lt; back to product list</a>
+        <a class="back-link" routerLink="/"> back to product list</a>
     </div>
 
     </div>

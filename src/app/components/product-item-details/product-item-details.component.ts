@@ -1,10 +1,11 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import {  Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ProductService } from 'src/app/services/product.service';
 import { Product } from 'src/app/model/product';
 import { filter, Observable } from 'rxjs';
 import { CartProductService } from 'src/app/services/cart-product.service';
 import { CartProduct } from 'src/app/model/cart-product';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-product-item-details',
@@ -19,8 +20,7 @@ export class ProductItemDetailsComponent implements OnInit {
 product: CartProduct;
 id: number=0;
 items=  Array(10).fill(0).map((x,i)=>i+1)
-
-    cart:number;
+cart=1;
 constructor(private activatedRoute:ActivatedRoute, private productService: ProductService, private cartProductService:CartProductService) {
 
  
@@ -40,12 +40,11 @@ constructor(private activatedRoute:ActivatedRoute, private productService: Produ
   }
 
 
+
+  addToCart() {
  
 
-  addToCart( f:any) {
-    debugger;
-    const cart =f.value.cart
-    let  cartProduct:CartProduct={...this.product, orderCount:cart}
+    let  cartProduct:CartProduct={...this.product, orderCount:this.cart}
     
     this.cartProductService.addProductToCart(cartProduct)
     window.alert('Your product has been added to the cart!');

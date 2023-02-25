@@ -9,7 +9,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit{
-  items=[1,2,3,4,5,6,7,8,9,10]
   products:CartProduct[]=[]
   totalPrice:number=0
 
@@ -32,6 +31,7 @@ this.calculateTotal()
   prod.orderCount=amt;
 if(amt<1){
   this.cartProductService.removeProduct(prod);
+  window.alert(`You have removed ${prod.name} from the carts` );
   this.products= this.cartProductService.getProduct()|| [];
 }else{
   this.cartProductService.addProductToCart(prod);
